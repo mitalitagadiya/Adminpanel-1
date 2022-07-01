@@ -17,10 +17,10 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
+import { NavLink } from 'react-router-dom';
 import MailIcon from '@mui/icons-material/Mail';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import AccessibleIcon from '@mui/icons-material/Accessible';
-import { NavLink } from 'react-router-dom';
 
 const drawerWidth = 240;
 

@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import Layout from './Component/Layout/Layout';
-import { Route, Switch } from 'react-router-dom';
 import Medicines from './Containers/Medicines/Medicines';
 import Patients from './Containers/Patients/Patients';
+import { Route, Switch } from 'react-router-dom';
+
 
 
 function App() {
