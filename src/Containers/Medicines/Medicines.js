@@ -164,7 +164,7 @@ function Medicines(props) {
                     </DialogActions>
                 </Dialog>
                 <Dialog fullWidth open={open} onClose={handleClose}>
-                    <DialogTitle>Add Medicines</DialogTitle>
+                    <DialogTitle>ADD MEDICINES</DialogTitle>
                     <Formik values={formik}>
                         <Form onSubmit={handleSubmit}>
                             <DialogContent>

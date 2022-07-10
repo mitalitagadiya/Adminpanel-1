@@ -16,7 +16,7 @@ function App() {
       <Switch>
 
       <Route path={"/Medicines"} exact component={Medicines}/>
-      {/* <Route path={"/Patients"} exact component={Patients}/> */}
+      <Route path={"/Patients"} exact component={Patients}/>
 
       </Switch>
 
