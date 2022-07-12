@@ -17,6 +17,8 @@ function Medicines(props) {
     const [dopen, setDOpen] = React.useState(false);
     const [did, setDid] = useState(0);
     const [data, setData] = useState([]);
+    // const [data, setData] = useState([]);
+
 
     const handleDClickOpen = () => {
         setDOpen(true);
