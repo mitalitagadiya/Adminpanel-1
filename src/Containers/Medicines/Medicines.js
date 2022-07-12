@@ -17,7 +17,6 @@ function Medicines(props) {
     const [dopen, setDOpen] = React.useState(false);
     const [did, setDid] = useState(0);
     const [data, setData] = useState([]);
-    // const [data, setData] = useState([]);
 
 
     const handleDClickOpen = () => {
@@ -133,6 +132,13 @@ function Medicines(props) {
         LoadData();
     }, [])
 
+    let fdata = localData.filter((d) =>{
+        d.Name.includes(val) ||
+        d.Price.toString().includes(val) ||
+        d.Expiry.toString().includes(val) ||
+        d.Quntity.toString().includes(val)
+    })
+
     return (
         <div>
             <h1>Medicines</h1>
@@ -140,6 +146,16 @@ function Medicines(props) {
                 <Button variant="outlined" onClick={handleClickOpen}>
                     Add Medicines
                 </Button>
+                <TextField
+                                    margin="dense"
+                                    id="Search"
+                                    name='Search'
+                                    label="Medicines Search"
+                                    type="text"
+                                    fullWidth
+                                    variant="standard"
+                                    onChange={(e) => handleSearch(e.target.value)}
+                />
                 <div style={{ height: 400, width: '100%' }}>
                     <DataGrid
                         rows={data}
