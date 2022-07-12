@@ -19,6 +19,8 @@ function Patients(props) {
     const [data, setData] = useState([]);
     const [did, setDid] = useState(0);
     const [update, setupdate] = useState(false);
+    const [filterData, setFilterData] = useState([]);
+
 
     const handleDClickOpen = () => {
         setDOpen(true);
@@ -159,9 +161,9 @@ function Patients(props) {
     const handleDelete = (params) => {
         let localData = JSON.parse(localStorage.getItem("Patients"));
 
-        let fData = localData.filter((l) => l.id !== did);
+        let pdata = localData.filter((l) => l.id !== did);
 
-        localStorage.setItem("Patients", JSON.stringify(fData));
+        localStorage.setItem("Patients", JSON.stringify(pdata));
         console.log(params.id);
 
         loadData();
@@ -177,6 +179,21 @@ function Patients(props) {
     }, 
     [])
 
+    const handleSearch = (val) => {
+        let localData = JSON.parse(localStorage.getItem("Patients"));
+
+        let pdata = localData.filter((d) =>(
+            d.name.toLowerCase().includes(val.toLowerCase()) ||
+            d.message.toString().includes(val) ||
+            d.age.toString().includes(val) ||
+            d.date.toString().includes(val)
+        ));
+    
+        setFilterData(pdata)
+    }
+    
+    const pdata = filterData. length > 0 ? filterData : data;
+
     return (
         <div>
             <h1>Patients</h1>
@@ -184,9 +201,19 @@ function Patients(props) {
                 <Button variant="outlined" onClick={handleClickOpen}>
                     Patients data
                 </Button>
+                <TextField
+                                    margin="dense"
+                                    id="Search"
+                                    name='Search'
+                                    label="Search Patients Data"
+                                    type="text"
+                                    fullWidth
+                                    variant="standard"
+                                    onChange={(e) => handleSearch(e.target.value)}
+                />
                 <div style={{ height: 400, width: '100%' }}>
                     <DataGrid
-                        rows={data}
+                        rows={pdata}
                         columns={columns}
                         pageSize={5}
                         rowsPerPageOptions={[5]}
