@@ -138,6 +138,7 @@ function Medicines(props) {
         d.Expiry.toString().includes(val) ||
         d.Quntity.toString().includes(val)
     })
+    
 
     return (
         <div>
