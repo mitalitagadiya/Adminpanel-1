@@ -17,7 +17,8 @@ function Medicines(props) {
     const [dopen, setDOpen] = React.useState(false);
     const [did, setDid] = useState(0);
     const [data, setData] = useState([]);
-
+    const [filterData, setFilterData] = useState([]);
+                                       
 
     const handleDClickOpen = () => {
         setDOpen(true);
@@ -132,13 +133,20 @@ function Medicines(props) {
         LoadData();
     }, [])
 
-    let fdata = localData.filter((d) =>{
-        d.Name.includes(val) ||
-        d.Price.toString().includes(val) ||
-        d.Expiry.toString().includes(val) ||
-        d.Quntity.toString().includes(val)
-    })
+    const handleSearch = (val) => {
+        let localData = JSON.parse(localStorage.getItem("Medicines"));
+
+        let fdata = localData.filter((d) =>(
+            d.Name.toLowerCase().includes(val.toLowerCase()) ||
+            d.Price.toString().includes(val) ||
+            d.Expiry.toString().includes(val) ||
+            d.Quntity.toString().includes(val)
+        ));
     
+        setFilterData(fdata)
+    }
+    
+    const fdata = filterData. length > 0 ? filterData : data;
 
     return (
         <div>
@@ -159,7 +167,7 @@ function Medicines(props) {
                 />
                 <div style={{ height: 400, width: '100%' }}>
                     <DataGrid
-                        rows={data}
+                        rows={fdata}
                         columns={columns}
                         pageSize={5}
                         rowsPerPageOptions={[5]}
