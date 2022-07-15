@@ -202,14 +202,14 @@ function Patients(props) {
                     Patients data
                 </Button>
                 <TextField
-                                    margin="dense"
-                                    id="Search"
-                                    name='Search'
-                                    label="Search Patients Data"
-                                    type="text"
-                                    fullWidth
-                                    variant="standard"
-                                    onChange={(e) => handleSearch(e.target.value)}
+                    margin="dense"
+                    id="Search"
+                    name='Search'
+                    label="Search Patients Data"
+                    type="text"
+                    fullWidth
+                    variant="standard"
+                    onChange={(e) => handleSearch(e.target.value)}
                 />
                 <div style={{ height: 400, width: '100%' }}>
                     <DataGrid
@@ -282,7 +282,7 @@ function Patients(props) {
                                 />
                                 {errors.age && touched.age ? <p>{errors.age}</p> : ''}
                                 <br></br>
-                                {/* <br></br> */}
+                                <br></br>
                                 <TextField
                                     value={values.date}
                                     margin="dense"
