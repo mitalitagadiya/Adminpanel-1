@@ -4,24 +4,26 @@ import Layout from './Component/Layout/Layout';
 import Medicines from './Containers/Medicines/Medicines';
 import Patients from './Containers/Patients/Patients';
 import { Route, Switch } from 'react-router-dom';
+import Doctors from './Containers/Doctors/Doctors';
 
 
 
 function App() {
   return (
     <>
-    
+
       <Layout>
 
-      <Switch>
+        <Switch>
 
-      <Route path={"/Medicines"} exact component={Medicines}/>
-      {/* <Route path={"/Patients"} exact component={Patients}/> */}
+          <Route path={"/Medicines"} exact component={Medicines} />
+          <Route path={"/Patients"} exact component={Patients} />
+          <Route path={"/Doctors"} exact component={Doctors} />
 
-      </Switch>
+        </Switch>
 
       </Layout>
-    
+
     </>
   );
 }

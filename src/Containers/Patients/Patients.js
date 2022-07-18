@@ -56,9 +56,8 @@ function Patients(props) {
         onSubmit: values => {
             if (update) {
                 handleupdate(values);
-            } 
-            else 
-            {
+            }
+            else {
                 handleInsert(values);
             }
         },
@@ -78,10 +77,10 @@ function Patients(props) {
             width: 170,
             renderCell: (params) => (
                 <>
-                    <IconButton  onClick={() => Edit(params)}>
+                    <IconButton onClick={() => Edit(params)}>
                         <EditIcon />
                     </IconButton>
-                    <IconButton  onClick={() => { handleDClickOpen(); setDid(params.id) }}>
+                    <IconButton onClick={() => { handleDClickOpen(); setDid(params.id) }}>
                         <DeleteIcon />
                     </IconButton>
                 </>
@@ -98,20 +97,19 @@ function Patients(props) {
 
     }
 
-    const handleupdate =  (values) => {
+    const handleupdate = (values) => {
         let localData = JSON.parse(localStorage.getItem("Patients"));
 
-       let udata = localData.map((l) => {
-            if(l.id === values.id){
+        let udata = localData.map((l) => {
+            if (l.id === values.id) {
                 return values;
             }
-            else
-            {
+            else {
                 return l;
             }
         })
 
-        localStorage.setItem("Patients",JSON.stringify(udata));
+        localStorage.setItem("Patients", JSON.stringify(udata));
         console.log(values);
 
         handleClose();
@@ -133,9 +131,8 @@ function Patients(props) {
 
         if (localData === null) {
             localStorage.setItem("Patients", JSON.stringify([data]));
-        } 
-        else 
-        {
+        }
+        else {
             localData.push(data);
 
             localStorage.setItem("Patients", JSON.stringify(localData));
@@ -153,7 +150,7 @@ function Patients(props) {
     const loadData = () => {
         let localData = JSON.parse(localStorage.getItem("Patients"));
 
-        if(localData){
+        if (localData) {
             setData(localData);
         }
     }
@@ -176,23 +173,23 @@ function Patients(props) {
 
         loadData();
 
-    }, 
-    [])
+    },
+        [])
 
     const handleSearch = (val) => {
         let localData = JSON.parse(localStorage.getItem("Patients"));
 
-        let pdata = localData.filter((d) =>(
+        let pdata = localData.filter((d) => (
             d.name.toLowerCase().includes(val.toLowerCase()) ||
             d.message.toString().includes(val) ||
             d.age.toString().includes(val) ||
             d.date.toString().includes(val)
         ));
-    
+
         setFilterData(pdata)
     }
-    
-    const pdata = filterData. length > 0 ? filterData : data;
+
+    const pdata = filterData.length > 0 ? filterData : data;
 
     return (
         <div>

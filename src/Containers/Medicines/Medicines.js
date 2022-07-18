@@ -18,7 +18,7 @@ function Medicines(props) {
     const [did, setDid] = useState(0);
     const [data, setData] = useState([]);
     const [filterData, setFilterData] = useState([]);
-                                       
+
 
     const handleDClickOpen = () => {
         setDOpen(true);
@@ -136,17 +136,17 @@ function Medicines(props) {
     const handleSearch = (val) => {
         let localData = JSON.parse(localStorage.getItem("Medicines"));
 
-        let fdata = localData.filter((d) =>(
+        let fdata = localData.filter((d) => (
             d.Name.toLowerCase().includes(val.toLowerCase()) ||
             d.Price.toString().includes(val) ||
             d.Expiry.toString().includes(val) ||
             d.Quntity.toString().includes(val)
         ));
-    
+
         setFilterData(fdata)
     }
-    
-    const fdata = filterData. length > 0 ? filterData : data;
+
+    const fdata = filterData.length > 0 ? filterData : data;
 
     return (
         <div>
@@ -156,14 +156,14 @@ function Medicines(props) {
                     Add Medicines
                 </Button>
                 <TextField
-                                    margin="dense"
-                                    id="Search"
-                                    name='Search'
-                                    label="Medicines Search"
-                                    type="text"
-                                    fullWidth
-                                    variant="standard"
-                                    onChange={(e) => handleSearch(e.target.value)}
+                    margin="dense"
+                    id="Search"
+                    name='Search'
+                    label="Medicines Search"
+                    type="text"
+                    fullWidth
+                    variant="standard"
+                    onChange={(e) => handleSearch(e.target.value)}
                 />
                 <div style={{ height: 400, width: '100%' }}>
                     <DataGrid
