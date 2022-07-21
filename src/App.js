@@ -4,6 +4,7 @@ import Layout from './Component/Layout/Layout';
 import Medicines from './Containers/Medicines/Medicines';
 import Patients from './Containers/Patients/Patients';
 import { Route, Switch } from 'react-router-dom';
+import Counter from './Containers/Medicines/Counter';
 
 
 
@@ -16,7 +17,9 @@ function App() {
       <Switch>
 
       <Route path={"/Medicines"} exact component={Medicines}/>
-      {/* <Route path={"/Patients"} exact component={Patients}/> */}
+      <Route path={"/Patients"} exact component={Patients}/>
+      <Route path={"/Counter"} exact component={Counter}/>
+
 
       </Switch>
 
