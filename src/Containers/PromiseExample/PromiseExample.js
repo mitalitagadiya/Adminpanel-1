@@ -55,6 +55,7 @@ function PromiseExample(props) {
 
         let sum=0;
         sum = a + b;
+        
         callback(sum); 
 
     }

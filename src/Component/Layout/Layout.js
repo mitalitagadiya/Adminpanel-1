@@ -100,6 +100,7 @@ export default function Layout({children}) {
 
   const handleDrawerClose = () => {
     setOpen(false);
+    
   };
 
   const ListItemData =[

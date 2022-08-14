@@ -11,6 +11,7 @@ import PromiseExample from './Containers/PromiseExample/PromiseExample';
 
 
 function App() {
+  
   let store = configurestore()
   return (
 
