@@ -1,0 +1,38 @@
+{
+    "Medicines": [
+    { "id": 1,
+      "Name": "json-server",
+      "Price": 101,
+      "Quntity": 10,
+      "Expiry": 2020
+    },
+    { "id": 2,
+      "Name": "json-server",
+      "Price": 101,
+      "Quntity": 10,
+      "Expiry": 2020
+    },
+    { "id": 3,
+      "Name": "json-server",
+      "Price": 101,
+      "Quntity": 10,
+      "Expiry": 2020
+    },
+    { "id": 4,
+      "Name": "json-server",
+      "Price": 101,
+      "Quntity": 10,
+      "Expiry": 2020
+    },
+    { "id": 5,
+      "Name": "json-server",
+      "Price": 101,
+      "Quntity": 10,
+      "Expiry": 2020
+    }
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "typicode" }
+  }
